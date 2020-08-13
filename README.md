@@ -10,6 +10,12 @@ If you already have a git repo for you AVR source code, you can easily include t
 $ cd ./${DIR_WHERE_YOU_WANT_TO_ADD_THE_MODULE}
 $ git submodule add https://github.com/stephendpmurphy/avr-ws2812.git
 ```
+
+When cloning repositories for the first time that contain submodules, you will have to pull the submodules using the following:
+```
+$ git submodule update --init --recursive
+```
+
 ## Including the driver in your project
 Now that the source has been added as a submodule (or just added to your project directory if it's a non Git based project) you can simply include the **avr_ws2812.c** as a source file in your project, and add the **inc/** folder in your include directories.
 
