@@ -16,14 +16,14 @@ typedef struct cRGB {
     uint8_t g;
     uint8_t r;
     uint8_t b;
-} str_RGB;
+} ws2812_RGB_t;
 
 typedef struct {
     uint8_t g;
     uint8_t r;
     uint8_t b;
     uint8_t w;
-} str_RGBW;
+} ws2812_RGBW_t;
 
 /* User Interface
  *
@@ -38,9 +38,9 @@ typedef struct {
  *         - Wait 50µs to reset the LEDs
  */
 
-void ws2812_setleds     (struct cRGB  *ledarray, uint16_t number_of_leds);
-void ws2812_setleds_pin (struct cRGB  *ledarray, uint16_t number_of_leds,uint8_t pinmask);
-void ws2812_setleds_rgbw(struct cRGBW *ledarray, uint16_t number_of_leds);
+void ws2812_setleds     (ws2812_RGB_t  *ledarray, uint16_t number_of_leds);
+void ws2812_setleds_pin (ws2812_RGB_t  *ledarray, uint16_t number_of_leds,uint8_t pinmask);
+void ws2812_setleds_rgbw(ws2812_RGBW_t *ledarray, uint16_t number_of_leds);
 
 /*
  * Old interface / Internal functions
