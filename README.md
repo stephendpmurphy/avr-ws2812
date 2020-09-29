@@ -6,13 +6,13 @@ This has been tested on an ATtiny87 running at 8Mhz, and it works without any is
 
 ## Adding the driver as a submodule to your repo
 If you already have a git repo for you AVR source code, you can easily include this WS2812 driver by including it as a submodule to your repository.
-```
+```bash
 $ cd ./${DIR_WHERE_YOU_WANT_TO_ADD_THE_MODULE}
 $ git submodule add https://github.com/stephendpmurphy/avr-ws2812.git
 ```
 
 When cloning repositories for the first time that contain submodules, you will have to pull the submodules using the following:
-```
+```bash
 $ git submodule update --init --recursive
 ```
 
@@ -26,7 +26,7 @@ Actually adding the module into your source is really straight forward. An examp
 
 Simple include the header, create an array of pixels to match the number of LEDs you have, and a temporary "Pixel" for updating your RGB values.
 
-```
+```c
 #include <stdio.h>
 #include <util/delay.h>
 #include "avr_ws2812.h"
